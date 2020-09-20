@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "282446590730",
+    "firebase_url": "https://pg-flat-finder-2a23b.firebaseio.com",
+    "project_id": "pg-flat-finder-2a23b",
+    "storage_bucket": "pg-flat-finder-2a23b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282446590730:android:bcbae81e15b906ef4080f3",
+        "android_client_info": {
+          "package_name": "com.example.pgflatfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282446590730-tfonhcdkth0n7p6upaqj1o4eenusk5d6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtFdZSWDlrwk4kpEcS0lVrgD6WHodjiuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282446590730-tfonhcdkth0n7p6upaqj1o4eenusk5d6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

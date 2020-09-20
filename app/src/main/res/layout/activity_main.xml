@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+        android:id="@+id/bottom_navigation_view_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:padding="12dp">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/settings"
+            android:layout_weight="1"
+            app:bt_colorInactive="#000000"
+            app:bt_icon="@drawable/ic_baseline_home_24"
+            app:bt_title="Home"
+            app:bt_padding="7dp"
+             />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            android:layout_weight="1"
+            app:bt_colorActive="@color/home"
+            app:bt_colorInactive="#000000"
+            app:bt_icon="@drawable/ic_baseline_favorite_24"
+            app:bt_title="Favorites"
+            app:bt_padding="7dp"
+            />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            android:layout_weight="1"
+            app:bt_colorActive="@color/documents"
+            app:bt_colorInactive="#000000"
+            app:bt_icon="@drawable/ic_baseline_account_circle_24"
+            app:bt_title="Profile"
+            app:bt_padding="7dp"
+            />
+
+    </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_fab_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_baseline_menu_24"
+        android:layout_margin="16dp"
+        android:background="@color/settings"
+        />
+
+</RelativeLayout>
