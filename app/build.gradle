@@ -42,5 +42,7 @@ dependencies {
     // bottom navigation bubble
     implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
     implementation  'com.fxn769:bubbletabbar:1.0.5'
+    // navigation menu
+    compile 'nl.psdcompany:duo-navigation-drawer:3.0.0'
 
 }
