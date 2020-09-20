@@ -5,13 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/fragment_container"
+    >
 
     <com.gauravk.bubblenavigation.BubbleNavigationLinearView
-        android:id="@+id/bottom_navigation_view_linear"
+        android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/round_corners"
         android:elevation="8dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
@@ -59,20 +61,5 @@
 
     </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewpager"
-        />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/menu_fab_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_baseline_menu_24"
-        android:layout_margin="16dp"
-        android:background="@color/settings"
-        />
 
 </RelativeLayout>
