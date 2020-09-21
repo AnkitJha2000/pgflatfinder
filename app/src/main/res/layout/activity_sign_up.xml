@@ -79,6 +79,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Mobile number"
+        android:id="@+id/mobile_reg"
+        android:textColorHint="#000000"
+        app:boxStrokeColor="#000000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/create_email"
+        android:layout_marginTop="15dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColor="#000000"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Create Password"
         android:id="@+id/create_password"
         android:textColorHint="#000000"
@@ -86,7 +108,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/create_email"
+        android:layout_below="@id/mobile_reg"
         app:passwordToggleEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText

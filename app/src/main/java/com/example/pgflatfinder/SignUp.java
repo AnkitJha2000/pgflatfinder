@@ -29,7 +29,7 @@ import java.util.Objects;
 import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
 
 public class SignUp extends AppCompatActivity {
-    TextInputLayout fullname,create_email,create_password;
+    TextInputLayout fullname,create_email,create_password,mobile;
     Button signupbtn,backtosignin;
     ProgressDialog progressDialog;
     FirebaseDatabase rootNode;
@@ -55,7 +55,7 @@ public class SignUp extends AppCompatActivity {
         create_password = findViewById(R.id.create_password);
         signupbtn = findViewById(R.id.signupbtn);
         backtosignin = findViewById(R.id.backtosignin);
-
+        mobile = findViewById(R.id.mobile_reg);
 
         // function
         backtosignin.setOnClickListener(new View.OnClickListener() {
@@ -72,21 +72,44 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!validateName() || !validatePassword() || !validateEmail())
+                if(!validateName() || !validatePassword() || !validateEmail() || !validateMobile())
                 {
                     return;
                 }
+
                 String display_name = Objects.requireNonNull(fullname.getEditText().getText().toString());
                 String email = Objects.requireNonNull(create_email.getEditText().getText().toString());
                 String password = Objects.requireNonNull(create_password.getEditText().getText().toString());
+                String mobile_number = Objects.requireNonNull((mobile.getEditText().getText().toString()));
                 progressDialog.setTitle("Registering User");
                 progressDialog.setMessage("Please wait while we create your account!");
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.show();
-                register_user(display_name,email,password);
+                register_user(display_name,email,password,mobile_number);
             }
         });
 
+    }
+
+    private boolean validateMobile() {
+
+        String val = Objects.requireNonNull(mobile.getEditText()).getText().toString();
+        val = "+91" + val;
+        String noWhite = "^((\\+){1}91){1}[1-9]{1}[0-9]{9}$";
+        if (val.isEmpty()) {
+            mobile.setError("Field can't be Empty");
+            return false;
+        }
+        if(!val.matches(noWhite))
+        {
+            mobile.setError("Invalid mobile number");
+            return false;
+        }
+        else {
+            mobile.setError(NULL);
+            mobile.setErrorEnabled(false);
+            return true;
+        }
     }
 
     private Boolean validateName() {
@@ -143,7 +166,7 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-    private void register_user(final String display_name, final String email, String password) {
+    private void register_user(final String display_name, final String email, String password, final String mobile_number) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -162,6 +185,7 @@ public class SignUp extends AppCompatActivity {
 
                             reg.put("name",display_name);
                             reg.put("email",email);
+                            reg.put("mobile",mobile_number);
                             reg.put("uid",uid);
 
                             String registerUser = "users/" + uid;
