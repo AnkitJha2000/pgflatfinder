@@ -187,6 +187,7 @@ public class SignUp extends AppCompatActivity {
                             reg.put("email",email);
                             reg.put("mobile",mobile_number);
                             reg.put("uid",uid);
+                            reg.put("profile","https://firebasestorage.googleapis.com/v0/b/pg-flat-finder-2a23b.appspot.com/o/defaults%2Fdefault.png?alt=media&token=f835fd2a-24e8-49af-a98b-42716bc3c10b");
 
                             String registerUser = "users/" + uid;
 

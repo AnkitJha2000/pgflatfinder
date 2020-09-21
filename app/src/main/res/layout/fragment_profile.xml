@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-    <com.google.android.material.circularreveal.CircularRevealFrameLayout
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/profile_pic"
